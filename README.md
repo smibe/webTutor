@@ -1,2 +1,3 @@
-webTutor2
+webTutor
 =========
+Make e-learning more attractive
