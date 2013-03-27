@@ -1,0 +1,37 @@
+<style type="text/css">
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+form span.error {
+   color: red;
+}
+
+form.ng-invalid input.ng-invalid {
+   border-color: red;
+   outline-color: red;
+}
+</style>
+<div style="margin: 10px 10px">
+<h1>Ein-Mal-Eins Training.</h1>
+<p>
+    <div style="font-size: x-large">
+<form name="pageForm" ng-submit="submit()">
+        <span width="20px">{{a}}</span>
+        <span width="5"> {{operator}} </span>
+        <span width="20">{{b}}</span>
+        <span width="5"> = </span>
+        <input style="font-size: x-large" id="result" ng-model="result" type="number" min="0" max="100" style="width:40px;" ng-pattern="/[0-9]+/" />
+     <button type="submit" id="submit">
+     <img id="accept"  width="16" height="16" src="img/check-icon.png" />
+      </button>
+</form>
+    <p style="font-size: large">
+      <span style="color: green">Richtig: {{okCount}} </span><br/>
+      <span ng-show="haveErrors()" style="color: red">Falsch: {{errorCount}} </span>
+    </p>
+    </div>
+</p>
+</div>
