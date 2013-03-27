@@ -1,7 +1,8 @@
 angular.module('app', [
   'welcome',
   'dashboard',
-  'projects',
+  'timesTable',
+  'numbers',
   'admin',
   'services.breadcrumbs',
   'services.i18nNotifications',
