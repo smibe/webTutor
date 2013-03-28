@@ -19,14 +19,13 @@ form.ng-invalid input.ng-invalid {
 <h1>Plus/Minus Training</h1>
 <p>
     <div style="font-size: x-large">
-<form name="pageForm" ng-submit="submit()">
+<form name="pageForm" ng-submit="submit()" style="font-size: x-large">
         <span width="20px">{{a}}</span>
         <span width="5"> {{operator}} </span>
         <span width="20">{{b}}</span>
         <span width="5"> = </span>
-        <input id="result" ng-model="result"  style="font-size: x-large" type="number" min="0" max="2000" style="width:40px;" ng-pattern="/[0-9]+/" />
-     <button type="submit" id="submit">
-     <img id="accept"  width="16" height="16" src="img/check-icon.png" />
+        <input id="result" ng-model="result"  style="font-size: x-large;height:28px" type="number" min="0" max="2000" ng-pattern="/[0-9]+/" />
+     <button ng-show="false" type="submit" id="submit">
       </button>
         <span ng-show="false" id="result" width="20">{{resultText()}}</span>
     <span class="error" ng-show="pageForm.a.$error.required">

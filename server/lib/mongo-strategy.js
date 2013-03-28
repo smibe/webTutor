@@ -42,6 +42,7 @@ MongoDBStrategy.prototype.query = function(query, done) {
 
 // Get a user by id
 MongoDBStrategy.prototype.get = function(id, done) {
+  console.log(id);
   var request = rest.get(this.baseUrl + id, {
     query: {
       apiKey: this.apiKey

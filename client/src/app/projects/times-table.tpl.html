@@ -23,10 +23,7 @@ form.ng-invalid input.ng-invalid {
         <span width="5"> {{operator}} </span>
         <span width="20">{{b}}</span>
         <span width="5"> = </span>
-        <input style="font-size: x-large" id="result" ng-model="result" type="number" min="0" max="100" style="width:40px;" ng-pattern="/[0-9]+/" />
-     <button type="submit" id="submit">
-     <img id="accept"  width="16" height="16" src="img/check-icon.png" />
-      </button>
+        <input style="font-size: x-large;height:28px" id="result" ng-model="result" type="number" min="0" max="100" ng-pattern="/[0-9]+/" />
 </form>
     <p style="font-size: large">
       <span style="color: green">Richtig: {{okCount}} </span><br/>
