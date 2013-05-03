@@ -1,4 +1,4 @@
-angular.module('numbers', ['resources.projects'])
+angular.module('numbers', ['resources.lessons'])
 
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider.when('/numbers', {

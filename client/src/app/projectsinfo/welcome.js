@@ -4,13 +4,13 @@ angular.module('welcome', [], ['$routeProvider', function($routeProvider){
     templateUrl:'projectsinfo/welcome.tpl.html',
     controller:'WelcomeCtrl',
     resolve:{
-      projects:['Projects', function(Projects){
-        return Projects.all();
+      lessons:['Lessons', function(Lessons){
+        return Lessons.all();
       }]
     }
   });
 }]);
 
-angular.module('welcome').controller('WelcomeCtrl', ['$scope', 'projects', function($scope, projects){
-  $scope.projects = projects;
+angular.module('welcome').controller('WelcomeCtrl', ['$scope', 'lessons', function($scope, lessons){
+  $scope.lessons = lessons;
 }]);

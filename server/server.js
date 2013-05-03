@@ -58,7 +58,7 @@ app.namespace('/databases/:db/collections/:collection*', function() {
     }
   });
   app.all('/', function(req, res, next) {
-    if ( req.method !== 'GET' && (req.params.collection === 'users' || req.params.collection === 'projects') ) {
+    if ( req.method !== 'GET' && (req.params.collection === 'users' || req.params.collection === 'lessons') ) {
       // We require the current user to be admin to modify the users or projects collection
       return security.adminRequired(req, res, next);
     }
