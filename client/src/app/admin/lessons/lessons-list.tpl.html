@@ -1,0 +1,19 @@
+<table class="table table-bordered table-condensed table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Beschreibung</th>
+        <th>ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="lesson in lessons" ng-click="edit(lesson.$id())">
+        <td>{{lesson.name}}</td>
+        <td>{{lesson.desc}}</td>
+        <td>{{lesson._id.$oid}}</td>
+    </tr>
+    </tbody>
+</table>
+<div class="well">
+    <button class="btn" ng-click="new()">Neue Lektion</button>
+</div>

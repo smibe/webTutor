@@ -78,7 +78,7 @@ angular.module('numbers', [
       result.date = new Date();
       
       if ($scope.startDate != null) {
-        result.timeUsed = result.date - $scope.startDate;
+        result.timeUsed = result.date.getTime() - $scope.startDate.getTime();
       }
       result.$save(saveSuccess, saveError);
     };

@@ -1,0 +1,18 @@
+<div class="well">
+    <form name="form" crud-edit="lesson">
+        <legend>Lesson</legend>
+        <div class="row-fluid">
+            <div class="span6">
+                <label>Name</label>
+                <input type="text" name="name" ng-model="lesson.name" class="span10" required autofocus>
+                <label>Description</label>
+                <textarea rows="10" cols="10" ng-model="lesson.desc" class="span10">
+                </textarea>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <hr>
+            <crud-buttons class="span12"></crud-buttons>
+        </div>
+    </form>
+</div>
