@@ -3,7 +3,7 @@ angular.module('timesTable', ['resources.projects'])
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider.when('/timesTable', {
     templateUrl:'projects/times-table.tpl.html',
-    controller:'TimesTableCtrl',
+    controller:'TimesTableCtrl'
   });
 }])
 
@@ -30,16 +30,18 @@ angular.module('timesTable', ['resources.projects'])
         return $scope.a * $scope.b;
     };
     $scope.resultText = function resultText() {
-        if ($scope.result == $scope.calculate())
+        if ($scope.result === $scope.calculate()){
             return "richtig";
+        }
 
-        if ($scope.result === null)
+        if ($scope.result === null){
             return "";
+        }
         return "";
     };
     
     $scope.submit = function submit() {
-        if ($scope.result == $scope.calculate()){
+        if ($scope.result === $scope.calculate()){
             $scope.okCount++;
         }
         else {

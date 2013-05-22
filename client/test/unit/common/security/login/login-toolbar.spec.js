@@ -34,15 +34,15 @@ describe('login-toolbar', function() {
   });
 
   it('should display login when user is not authenticated', function() {
-    expect(toolbar.find('button:visible').text()).toBe('Log in');
-    expect(toolbar.find('button:hidden').text()).toBe('Log out');
+    expect(toolbar.find('button:visible').text()).toBe('Anmelden');
+    expect(toolbar.find('button:hidden').text()).toBe('Abmelden');
   });
 
   it('should display logout when user is authenticated', function() {
     security.currentUser = {};
     $rootScope.$digest();
-    expect(toolbar.find('button:visible').text()).toBe('Log out');
-    expect(toolbar.find('button:hidden').text()).toBe('Log in');
+    expect(toolbar.find('button:visible').text()).toBe('Abmelden');
+    expect(toolbar.find('button:hidden').text()).toBe('Anmelden');
   });
 
   it('should call logout when the logout button is clicked', function () {

@@ -31,13 +31,17 @@ form.ng-invalid input.ng-invalid {
     <span class="error" ng-show="pageForm.a.$error.required">
         Bitte gib eine Zahl ein!</span>
    <span class="error" ng-show="pageForm.a.$error.valid">
-     Bitte eine gültige Zahl eingeben!</span>
+     Bitte eine g&uuml;ltige Zahl eingeben!</span>
 </form>
     
     <p style="font-size: large">
       <span style="color: green">Richtig: {{okCount}} </span><br/>
       <span ng-show="errorCount > 0" style="color: red">Falsch: {{errorCount}} </span>
     </p>
+    <p>
+     <button id="saveResult" ng-click="storeResult()">Ergebnis speichern
+      </button>
+     </p>
     </div>
 </p>
 </div>
