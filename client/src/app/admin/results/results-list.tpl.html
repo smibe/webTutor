@@ -1,0 +1,23 @@
+<table class="table table-bordered table-condensed table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Datum</th>
+        <th>&Uuml;bung</th>
+        <th>Benutzer</th>
+        <th>Richtig</th>
+        <th>Falsch</th>
+        <th>Zeit (s)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="result in results">
+        <td>{{getDate(result)}}</td>
+        <td>{{result.lesson}}</td>
+        <td>{{result.user}}</td>
+        <td>{{result.okCount}}</td>
+        <td>{{result.errorCount}}</td>
+        <td>{{getUsedTime(result)}}</td>
+        <td><button class="btn btn-danger remove" ng-click="remove(result, $index, $event)">L&ouml;schen</button></td>
+    </tr>
+    </tbody>
+</table>

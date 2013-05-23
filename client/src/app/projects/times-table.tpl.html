@@ -29,6 +29,8 @@ form.ng-invalid input.ng-invalid {
       <span style="color: green">Richtig: {{okCount}} </span><br/>
       <span ng-show="haveErrors()" style="color: red">Falsch: {{errorCount}} </span>
     </p>
+     <button id="saveResult" ng-click="storeResult()">Ergebnis speichern
+      </button>
     </div>
 </p>
 </div>

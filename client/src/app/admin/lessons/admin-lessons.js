@@ -1,14 +1,15 @@
 angular.module('admin-lessons', [
   'resources.lessons',
   'resources.users',
+  'resources.results',
   'services.crud',
   'security.authorization'
 ])
 
 .config(['crudRouteProvider', 'securityAuthorizationProvider', function (crudRouteProvider, securityAuthorizationProvider) {
 
-  var getAllUsers = ['Lessons', 'Users', '$route', function(Lessons, Users, $route){
-    return Users.all();
+  var getAllLessons = ['Lessons', '$route', function(Lessons, $route){
+    return Lessons.all();
   }];
 
   crudRouteProvider.routesFor('Lessons', 'admin')
@@ -18,12 +19,10 @@ angular.module('admin-lessons', [
     })
     .whenNew({
       lesson: ['Lessons', function(Lessons) { return new Lessons(); }],
-      users: getAllUsers,
       adminUser: securityAuthorizationProvider.requireAdminUser
     })
     .whenEdit({
       lesson: ['Lessons', 'Users', '$route', function(Lessons, Users, $route) { return Lessons.getById($route.current.params.itemId); }],
-      users: getAllUsers,
       adminUser: securityAuthorizationProvider.requireAdminUser
     });
 }])
@@ -37,13 +36,6 @@ angular.module('admin-lessons', [
 .controller('LessonsEditCtrl', ['$scope', '$location', 'i18nNotifications', 'users', 'lesson', function($scope, $location, i18nNotifications, users, lesson) {
 
   $scope.lesson = lesson;
-
-  $scope.users = users;
-  //prepare users lookup, just keep references for easier lookup
-  $scope.usersLookup = {};
-  angular.forEach(users, function(value, key) {
-    $scope.usersLookup[value.$id()] = value;
-  });
 
   $scope.onSave = function(lesson) {
     i18nNotifications.pushForNextRoute('crud.lesson.save.success', 'success', {id : lesson.$id()});
