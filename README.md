@@ -1,3 +1,3 @@
 webTutor
 =========
-Make e-learning more attractive
+Make e-training more attractive for kids
