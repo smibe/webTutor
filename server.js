@@ -94,7 +94,7 @@ app.all('/*', function(req, res) {
 app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
 // Start up the server on the port specified in the config
-server.listen(config.server.listenPort);
+server.listen(process.env.PORT || config.server.listenPort);
 console.log('Angular App Server - listening on port: ' + config.server.listenPort);
-secureServer.listen(config.server.securePort);
-console.log('Angular App Server - listening on secure port: ' + config.server.securePort);
+//secureServer.listen(config.server.securePort);
+//console.log('Angular App Server - listening on secure port: ' + config.server.securePort);
